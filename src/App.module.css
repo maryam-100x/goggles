@@ -97,11 +97,33 @@ html, body, #root {
 
 .buttonRow {
   display: flex;
-  justify-content: center;
   gap: 1rem;
-  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 2rem;
+  flex-wrap: wrap;
 }
+
+.buttonRow .button {
+  min-width: 180px; /* force same width */
+  text-align: center;
+}
+
+.caWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.caWrapper .button {
+  max-width: 600px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button {
+  padding: 0.75rem 2rem;
+}
+
 
 .contractWrapper {
   margin-top: 1rem;

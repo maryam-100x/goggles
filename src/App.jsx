@@ -107,11 +107,12 @@ function App() {
   </a>
 </div>
 
-<div className={styles.contractWrapper}>
-  <button className={styles.contractButton} onClick={handleCopy}>
+<div className={styles.caWrapper}>
+  <button className={styles.button} onClick={handleCopy}>
     {copied ? 'copied!' : `ca: ${CONTRACT_ADDRESS}`}
   </button>
 </div>
+
 
 
         <AnimatePresence>
