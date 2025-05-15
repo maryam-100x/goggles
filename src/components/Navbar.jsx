@@ -7,7 +7,19 @@ export default function Navbar() {
         <img src="/goggles.png" alt="$GOGS Logo" className={styles.logoImage} />
         <span className={styles.logoText}>$GOGS</span>
       </a>
+
+      {/* <div className={styles.gogglifyCenter}>
+        <a href="/gogglify" className={styles.navLink}>Click to Gogglify</a>
+      </div> */}
+
       <div className={styles.links}>
+        <a
+          href="https://x.com/gogs_solana"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Official X
+        </a>
         <a
           href="https://raydium.io/launchpad/token/?mint=HxptKywiNbHobJD4XMMBn1czMUGkdMrUkeUErQLKbonk"
           target="_blank"

@@ -1,0 +1,401 @@
+/* Gogglify.module.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+  background-color: #ff4d00;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+}
+
+.uploadLabel {
+  position: relative;
+  cursor: pointer;
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.uploadButton, .controlButton, .downloadButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.uploadButton {
+  background-color: black;
+  color: white;
+}
+
+.uploadButton:hover {
+  background-color: #333;
+}
+
+.controlButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 2px solid white;
+}
+
+.controlButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.controlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.downloadButton {
+  background-color: #ffb347;
+  color: black;
+  font-weight: bold;
+}
+
+.downloadButton:hover {
+  background-color: #ff9500;
+}
+
+.downloadButton:disabled {
+  background-color: #ccc;
+  cursor: wait;
+}
+
+.editorWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.imageStage {
+  position: relative;
+  border: 4px dashed white;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.uploadedImage {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.gogglesContainer {
+  position: absolute;
+  z-index: 10;
+    cursor: move;
+
+  touch-action: none;
+}
+
+.gogglesWrapper {
+  position: relative;
+  cursor: move;
+  transition: transform 0.1s ease;
+    transition: transform 0.1s ease;
+
+}
+
+.gogglesWrapper.dragging {
+  opacity: 0.9;
+  transition: none;
+}
+
+.gogglesOverlay {
+  pointer-events: none;
+  user-select: none;
+}
+
+.react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+}
+
+.instructions {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.instructions h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.instructions ol {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .uploadButton, .controlButton, .downloadButton {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .imageStage {
+    max-height: 70vh;
+  }
+}
+
+.errorFallback {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.errorFallback button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff4d00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.errorMessage {
+  background-color: rgba(255, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.errorMessage button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff4d00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add these to your existing styles */
+.gogglesContainer {
+  position: absolute;
+  cursor: move;
+  width: 100px;
+  height: auto;
+  transition: outline 0.2s ease;
+}
+
+.gogglesOverlay {
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Update the controls section */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  align-items: center;
+}
+
+.controlButton {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.controlButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editorWrapper {
+  position: relative;
+  border: 2px dashed white;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 2rem auto;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.uploadedImage {
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.goggle {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  transform-origin: center center;
+  pointer-events: all;
+  cursor: move;
+}
+
+/* editor container */
+.editorWrapper {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 100%;
+  border: 2px dashed white;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+/* uploaded image */
+.baseImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* each goggles sticker */
+.gogglesImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.uploadLabel {
+  cursor: pointer;
+  position: relative;
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.uploadButton,
+.controlButton,
+.downloadButton {
+  padding: 0.75rem 1.5rem;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.uploadButton { background: black; color: white; }
+.uploadButton:hover { background: #333; }
+
+.controlButton { background: #444; color: white; }
+.controlButton:disabled { opacity: 0.5; cursor: not-allowed; }
+.controlButton:hover:not(:disabled) { background: #666; }
+
+.downloadButton { background: #ffb347; color: black; }
+.downloadButton:hover { background: #ff9500; }
+
+/* page container */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}

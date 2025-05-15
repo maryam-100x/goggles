@@ -4,26 +4,12 @@
   align-items: center;
   background: black;
   color: white;
-  padding: 0.1rem 2rem;
+  padding: 0.5rem 1rem;
   font-family: 'Orbitron', sans-serif;
+  flex-wrap: wrap;
+  row-gap: 0.5rem;
 }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-}
-
-.links a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-.links a:hover {
-  color: #ffb347;
-}
 
 .logo {
   display: flex;
@@ -43,13 +29,6 @@
   width: 64px;
   height: 64px;
   object-fit: contain;
-}
-
-.logoText {
-  font-family: 'Orbitron', sans-serif;
-}
-
-.logoImage {
   transition: transform 0.2s ease;
 }
 
@@ -57,3 +36,58 @@
   transform: scale(1.1);
 }
 
+.logoText {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.gogglifyCenter {
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.navLink {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  color: #ffb347;
+}
+
+.links a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: #ffb347;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .gogglifyCenter {
+    order: 2; /* Place it between logo and links */
+    margin-top: 0.5rem;
+  }
+}
