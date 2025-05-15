@@ -1,30 +1,72 @@
+/* Base Styles */
+:root {
+  font-family: 'Orbitron', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: white;
+  background-color: #ff4d00;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #ff4d00;
+  min-height: 100vh;
+}
+
+/* Layout Components */
+.wrapper {
+  background-color: #ff4d00;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;   /* ✅ Center horizontally */
-  justify-content: center; /* ✅ Center vertically */
+  align-items: center;
+  justify-content: center;
   max-width: 1080px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
   color: white;
-  font-family: 'Orbitron', sans-serif;
 }
 
-
-
+/* Visual Elements */
 .banner {
   width: 100%;
   max-width: 800px;
   border-radius: 12px;
   margin-bottom: 1rem;
+  height: auto;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
 }
 
 .counter {
@@ -43,7 +85,8 @@
   margin-top: 0.25rem;
 }
 
-.buttonGroup {
+/* Buttons & Interactive Elements */
+.buttonGroup, .buttonRow {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
@@ -51,79 +94,40 @@
   justify-content: center;
 }
 
-.button {
+.button, .contractButton {
   background: black;
   color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 2rem;
   border-radius: 999px;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: all 0.2s ease;
+  text-align: center;
 }
 
-.button:hover {
+.button:hover, .contractButton:hover {
   background: white;
   color: black;
 }
 
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: #ff4d00;
-}
-
-html, body, #root {
-  height: 100%;
-  width: 100%;
-}
-
-.wrapper {
-  background-color: #ff4d00;
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-}
-
-.page {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.buttonRow {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-
 .buttonRow .button {
-  min-width: 180px; /* force same width */
-  text-align: center;
+  min-width: 180px;
 }
 
 .caWrapper {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .caWrapper .button {
   max-width: 600px;
-  text-align: center;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-.button {
-  padding: 0.75rem 2rem;
-}
-
 
 .contractWrapper {
   margin-top: 1rem;
@@ -133,21 +137,58 @@ html, body, #root {
 }
 
 .contractButton {
-  background: black;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 999px;
   font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.2s ease;
+  padding: 0.75rem 1.5rem;
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.contractButton:hover {
-  background: white;
-  color: black;
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .counter {
+    font-size: 1.8rem;
+  }
+
+  .counterValue {
+    font-size: 2.25rem;
+  }
+
+  .counterLabel {
+    font-size: 0.9rem;
+  }
+
+  .buttonGroup, .buttonRow {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .button, .contractButton {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .caWrapper {
+    padding: 0 0.5rem;
+  }
+
+  .caWrapper .button {
+    font-size: 0.8rem;
+    padding: 0.6rem;
+  }
+
+  .banner {
+    max-height: 200px;
+    object-fit: cover;
+  }
 }
+

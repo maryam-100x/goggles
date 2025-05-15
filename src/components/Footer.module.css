@@ -7,12 +7,12 @@
   font-family: 'Orbitron', sans-serif;
 }
 
-.link {
+.footer .link {
   color: #ffb347;
   text-decoration: none;
   font-weight: 600;
 }
 
-.link:hover {
+.footer .link:hover {
   text-decoration: underline;
 }

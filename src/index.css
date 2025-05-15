@@ -54,15 +54,44 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
   }
-  a:hover {
-    color: #747bff;
+
+  .title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .counterValue {
+    font-size: 2rem;
+  }
+
+  .counterLabel {
+    font-size: 0.9rem;
+  }
+
+  .buttonGroup, .buttonRow {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .caWrapper .button {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .banner {
+    margin-bottom: 0.5rem;
   }
 }
