@@ -43,31 +43,6 @@
   margin-top: 0.25rem;
 }
 
-.progressBarWrapper {
-  width: 100%;
-  max-width: 600px;
-  margin-top: 2rem;
-}
-
-.progressBar {
-  height: 14px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 7px;
-  overflow: hidden;
-}
-
-.progressFill {
-  height: 100%;
-  background: white;
-  transform-origin: left;
-}
-
-.goalLabel {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
 .buttonGroup {
   display: flex;
   gap: 1rem;

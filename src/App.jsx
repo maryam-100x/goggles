@@ -49,7 +49,6 @@ function App() {
     }
   }, [animatedCount, triggerCelebration]);
 
-  const progressRatio = Math.min(animatedCount / GOAL, 1);
   const handleCopy = () => {
     navigator.clipboard.writeText(CONTRACT_ADDRESS);
     setCopied(true);
@@ -87,17 +86,7 @@ function App() {
           </span>
         </motion.p>
 
-        <div className={styles.progressBarWrapper}>
-          <div className={styles.progressBar}>
-            <motion.div
-              className={styles.progressFill}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: progressRatio }}
-              transition={{ type: 'spring', stiffness: 100 }}
-            />
-          </div>
-          <div className={styles.goalLabel}>goal: 10,000</div>
-        </div>
+      
 
         <div className={styles.buttonRow}>
   <a
