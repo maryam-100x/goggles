@@ -8,9 +8,9 @@ export default function Navbar() {
         <span className={styles.logoText}>$GOGS</span>
       </a>
 
-      {/* <div className={styles.gogglifyCenter}>
+      <div className={styles.gogglifyCenter}>
         <a href="/gogglify" className={styles.navLink}>Click to Gogglify</a>
-      </div> */}
+      </div>
 
       <div className={styles.links}>
         <a

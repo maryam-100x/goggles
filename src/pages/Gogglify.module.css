@@ -6,7 +6,8 @@
   font-family: 'Orbitron', sans-serif;
   color: white;
   background-color: #ff4d00;
-  min-height: 100vh;
+  min-height: auto;
+  padding-bottom: 120px;
 }
 
 .title {
@@ -399,3 +400,244 @@
   margin-bottom: 1.5rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Add these to your existing styles */
+.trash {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  border: 2px solid #ff4d00;
+}
+
+.trash::before {
+  content: "🗑️";
+  font-size: 1.5rem;
+}
+
+.howToCard {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 2px solid #ff4d00;
+}
+
+.howToCard h3 {
+  margin-top: 0;
+  color: #ffb347;
+  border-bottom: 1px solid #ff4d00;
+  padding-bottom: 10px;
+}
+
+.howToCard ol {
+  padding-left: 20px;
+}
+
+.howToCard li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.tips {
+  background: rgba(255, 77, 0, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.tips h4 {
+  margin-top: 0;
+  color: #ffb347;
+}
+
+.tips ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.rotateHandle {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.rotateHandle::after {
+  content: "↻";
+  font-size: 14px;
+}
+
+/* Animation for trash can when dragging */
+.gogglesWrapper {
+  transition: all 0.2s ease;
+}
+
+.rnd-dragging + .trash {
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+
+/* hide both outline and handle when capturing */
+.captureArea[data-capturing="true"] {
+  border: none;
+}
+.captureArea[data-capturing="true"] .react-rnd-resize-handle {
+  display: none !important;
+}
+
+.sizeControl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sizeControl input[type="range"] {
+  width: 100px;
+}
+
+/* Add to Gogglify.module.css */
+.gogglesSelection {
+  display: flex;
+  gap: 10px;
+}
+
+.goggleOption {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.goggleOption.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.controlButton {
+  margin: 0 5px;
+}
+
+/* Add to Gogglify.module.css */
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.contentContainer {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  gap: 2rem;
+}
+
+.container {
+  flex: 1 1 800px;
+  max-width: 800px;
+}
+
+.contentContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+/* Ensures image+editor can grow while helpCard remains fixed */
+.container {
+  flex: 1 1 auto;
+  max-width: 800px;
+  min-width: 300px;
+}
+
+/* Fixed-width Help Card */
+.helpCard {
+  flex: 0 0 320px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 2px solid #ffb347;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  font-family: 'Orbitron', sans-serif;
+  line-height: 1.6;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.helpCard h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ffb347;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 179, 71, 0.6);
+}
+
+.helpCard ol {
+  padding-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.helpCard li {
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 1000px) {
+  .contentContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .helpCard {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+

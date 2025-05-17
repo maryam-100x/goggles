@@ -8,14 +8,14 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="wrapper">
-        <div className="page">
-          <Navbar />
+        <Navbar />
+        <main className="page">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gogglify" element={<Gogglify />} />
           </Routes>
-          <Footer />
-        </div>
+        </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

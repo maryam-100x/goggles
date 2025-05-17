@@ -57,8 +57,12 @@
   color: #ffb347;
 }
 
+.links {
+  padding-right: 1rem;
+}
+
 .links a {
-  margin-left: 1.5rem;
+  margin-left: 2rem;
   text-decoration: none;
   color: white;
   font-weight: 500;
