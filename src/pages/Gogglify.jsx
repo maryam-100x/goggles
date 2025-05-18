@@ -149,7 +149,7 @@ export default function Gogglify() {
     <div className={styles.mainContainer}>
       <div className={styles.contentContainer}>
         <div className={styles.container}>
-          <h1 className={styles.title}>Gogglify Anything!</h1>
+          <h1 className={styles.title}>Goggify Anything!</h1>
 
           {/*  Controls  */}
           <div className={styles.controls}>
@@ -235,14 +235,14 @@ export default function Gogglify() {
 
         {/*  Help card  */}
        <div className={styles.helpCard}>
-          <h3>How to Gogglify</h3>
+          <h3>How to Goggify</h3>
           <ol>
             <li><strong>Upload an image</strong> using the "Upload Image" button</li>
             <li><strong>Click anywhere</strong> on the image to add goggles</li>
             <li><strong>Adjust size</strong> using the slider (10‑1000%)</li>
             <li><strong>Drag</strong> goggles to position them</li>
             <li><strong>Rotate/Flip</strong> selected goggles</li>
-            <li><strong>Download</strong> your gogglified image when ready</li>
+            <li><strong>Download</strong> your goggified image when ready</li>
             <li><strong>Reset</strong> to start over</li>
           </ol>
         </div>
