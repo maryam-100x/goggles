@@ -101,7 +101,7 @@ export default function Home() {
 
     <div className={styles.caWrapper}>
       <button className={styles.button} onClick={handleCopy}>
-        {copied ? 'copied!' : `ca: ${CONTRACT_ADDRESS}`}
+        {copied ? 'copied!' : `Ca: ${CONTRACT_ADDRESS}`}
       </button>
     </div>
 
