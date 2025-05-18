@@ -9,7 +9,7 @@ export default function Navbar() {
       </a>
 
       <div className={styles.gogglifyCenter}>
-  <a href="/gogglify" className={styles.navLink}>Click to Gogglify</a>
+  <a href="/gogglify" className={styles.navLink}>Click to Goggify</a>
 </div>
 
 

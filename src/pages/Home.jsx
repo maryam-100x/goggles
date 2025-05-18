@@ -63,7 +63,7 @@ export default function Home() {
       transition={{ duration: 1 }}
     />
     <h1 className={styles.title}>
-      are you wearing your trench goggles?
+      Do you have your $GOGS on?
     </h1>
     <motion.p
       key={animatedCount}
@@ -76,7 +76,7 @@ export default function Home() {
         {animatedCount.toLocaleString()}
       </span>
       <span className={styles.counterLabel}>
-        people wear the trench goggles
+        Keep their trench goggles on
       </span>
     </motion.p>
 
